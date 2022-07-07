@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.h1 {
+    border-top: 6px solid ;
+    position: absolute;
+    width: 35%;
+    height: 2px;
+    left:32.5%;
+    top:41.6667%;
+  }
+  
+
+.h2 {
+    border-top: 6px solid ;
+    position: absolute;
+    width: 35%;
+    height: 2px;
+    left:32.5%;
+    top:58.333%;
+  }
+
+
+
+.v1 {
+    border-left: 6px solid;
+    position: absolute;
+    width: 2px;
+    height: 50%;
+    left:44.6667%;
+    top:25%;
+  }
+
+.v2 {
+    border-left: 6px solid ;
+    position: absolute;
+    width: 2px;
+    height: 50%;
+    left:55.333%;
+    top:25%;
+  }
+
+  @media only screen and (max-width: 600px){
+    .h1,.h2{
+        width: 65%;
+        left:17.5%;
+    }
+
+    .v1{
+        left:38.6667%;
+    }
+    
+    .v2{
+        left:61.333%;
+    }
+  }
