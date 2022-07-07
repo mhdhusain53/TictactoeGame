@@ -8,7 +8,7 @@ const Orange =(props)=>{
 
 
     return(
-        <div className="border-2 p-2 bg-gray-200 m-auto mt-2 flex justify-center items-center">
+        <div className=" p-2  m-auto mt-2 flex justify-center items-center">
 
 
             <div className="inline-block w-28  mr-2"  >
