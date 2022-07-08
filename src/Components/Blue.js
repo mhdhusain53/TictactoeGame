@@ -14,7 +14,7 @@ const Blue =(props)=>{
 
 
             <div className="inline-block w-28  mr-2"  >
-                <img src="./images/blue.png" name='1' onClick={(e)=>click(e)} className={`${select===1&&props.items.a[0]===1?" shadow-2xl ":""} rounded-full ${props.items.a[0]===1?'cursor-pointer hover:shadow-lg ':'cursor-not-allowed opacity-30'}`} alt="blue" />
+                <img src="./images/blue.png" name='1' onClick={(e)=>click(e)} className={` rounded-full ${props.items.a[0]===1?'cursor-pointer hover:shadow-lg ':'cursor-not-allowed opacity-30'} ${select===1&&props.items.a[0]===1?" shadow-2xl ":""}`} alt="blue" />
             </div>
             <div className=" inline-block w-24 mr-2 ">
                 <img src="./images/blue.png" name='2' onClick={(e)=>click(e)} className={`${select===2&&props.items.a[1]===1?"shadow-2xl":""} rounded-full ${props.items.a[1]===1?'cursor-pointer hover:shadow-lg':'cursor-not-allowed opacity-30'}`} alt="blue" />

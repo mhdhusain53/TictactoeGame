@@ -1,7 +1,6 @@
 import React from "react";
 
 const Winner =(props)=>{
-    console.log(props);
     const click=()=>{
         props.restart();
     }

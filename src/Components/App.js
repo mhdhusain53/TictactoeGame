@@ -4,6 +4,7 @@ import Blue from "./Blue";
 import Orange from "./Orange";
 import Table from "./Table";
 import Winner from "./Winner";
+import Draw from "./Draw";
 
 const App = ()=>{
 
@@ -71,7 +72,14 @@ const App = ()=>{
 
     const checkGame=()=>{
         var t= state.t;
-        console.log(t);
+
+        var draw=true;
+        for(var i=0;i<9;i++){
+            if(t[i]===0){
+                draw=false;
+            }
+        }
+
         if( (t[0]<7&&t[1]<7&&t[2]<7&&t[0]!==0&&t[1]!==0&t[2]!==0) || 
             (t[3]<7&&t[4]<7&&t[5]<7&&t[3]!==0&&t[4]!==0&t[5]!==0) ||
             (t[6]<7&&t[7]<7&&t[8]<7&&t[8]!==0&&t[6]!==0&t[7]!==0) ||
@@ -93,14 +101,18 @@ const App = ()=>{
             (t[2]>6&&t[4]>6&&t[6]>6&&t[2]!==0&&t[4]!==0&t[6]!==0)
         ){
             return 2;
-        }else{
+        }else if(draw){
+            return 3;
+        }
+        else{
 
             return 0;
         }
     }
 
     const showGame=()=>{
-        if(checkGame()===0){
+        var game=checkGame();
+        if(game===0){
             return (
                 <div className="">
                     <Blue items={state} setSelected={setSelected}/>
@@ -110,7 +122,12 @@ const App = ()=>{
                     <Orange items={state} setSelected={setSelected} />
                 </div>
             )
-        }else{
+        }else if(game===3){
+            return (
+                <Draw restart={restart}/>
+            )
+        }
+        else{
             return (            
                 <Winner winner={checkGame()} restart={restart}/>
             )
