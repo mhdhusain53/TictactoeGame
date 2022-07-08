@@ -10,9 +10,7 @@ const Table =(props)=>{
             num++;
         }
     }
-
-    console.log(num);
-    const click=(event)=>{
+        const click=(event)=>{
         props.setGame(event.target.name);
     }
 
