@@ -72,11 +72,17 @@ const App = ()=>{
 
     const checkGame=()=>{
         var t= state.t;
-
+        var draw2 =true;
         var draw=true;
         for(var i=0;i<9;i++){
             if(t[i]===0){
                 draw=false;
+            }
+        }
+
+        for(var i =0;i<6;i++){
+            if(state.a[i]===1 ||state.b[i]===1){
+                draw2=false;
             }
         }
 
@@ -101,7 +107,7 @@ const App = ()=>{
             (t[2]>6&&t[4]>6&&t[6]>6&&t[2]!==0&&t[4]!==0&t[6]!==0)
         ){
             return 2;
-        }else if(draw){
+        }else if(draw||draw2){
             return 3;
         }
         else{
