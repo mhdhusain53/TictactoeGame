@@ -4,10 +4,11 @@ const Winner =(props)=>{
     const click=()=>{
         props.restart();
     }
+    var winner=localStorage.getItem('winner');
     var name=()=>{
-        if(props.winner===1){
+        if(winner==='1'){
             return "Blue team Wins";
-        }else{
+        }else if(winner==='2'){
             return "Orange team Wins";
         }
     }
@@ -18,7 +19,7 @@ const Winner =(props)=>{
                 <p className="inline-block m-3">🎉🎊🎉</p> Congratulations <p className="inline-block m-3">🎉🎊🎉</p>
 
                 </p>
-                <p className={`${props.winner===1?"text-blue-400":"text-orange-400"} block my-8 m-auto text-3xl md:text-5xl`}> 
+                <p className={`${winner==='1'?"text-blue-400":"text-orange-400"} block my-8 m-auto text-3xl md:text-5xl`}> 
                     {name()}
                 </p>
                 <div>

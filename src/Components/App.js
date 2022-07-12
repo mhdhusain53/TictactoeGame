@@ -134,8 +134,11 @@ const App = ()=>{
             )
         }
         else{
+            localStorage.setItem("winner",checkGame());
             return (            
-                <Winner winner={checkGame()} restart={restart}/>
+                // <Winner winner={checkGame()} restart={restart}/>
+                <Winner restart={restart}/>
+
             )
         }
     }
